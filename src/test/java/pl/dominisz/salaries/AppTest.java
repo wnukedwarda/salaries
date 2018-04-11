@@ -1,9 +1,7 @@
-package pl.dominisz.java8desktop;
+package pl.dominisz.salaries;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * http://dominisz.pl
