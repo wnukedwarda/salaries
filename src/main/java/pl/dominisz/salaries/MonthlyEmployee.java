@@ -19,7 +19,7 @@ public class MonthlyEmployee extends Employee {
 
     @Override
     public BigDecimal computeSalary(LocalDate date) {
-        return BigDecimal.ZERO;
+        return salary;
     }
 
     @Override
