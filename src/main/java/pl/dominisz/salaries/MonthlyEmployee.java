@@ -24,7 +24,7 @@ public class MonthlyEmployee extends Employee {
 
     @Override
     public LocalDate getFirstDayOfWorkingPeriod(LocalDate date) {
-        return null;
+        return LocalDate.of(date.getYear(), date.getMonth(), 1);
     }
 
     @Override
