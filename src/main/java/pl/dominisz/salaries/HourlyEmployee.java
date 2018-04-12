@@ -30,7 +30,7 @@ public class HourlyEmployee extends Employee {
     }
 
     @Override
-    protected BigDecimal computeSalary(LocalDate date) {
+    public BigDecimal computeSalary(LocalDate date) {
         LocalDate firstDay = getFirstDayOfWorkingPeriod(date);
         List<WorkingDay> salariedDays = findWorkingDays(firstDay, date);
         return computeSalary(salariedDays);
@@ -60,12 +60,12 @@ public class HourlyEmployee extends Employee {
     }
 
     @Override
-    protected LocalDate getFirstDayOfWorkingPeriod(LocalDate date) {
+    public LocalDate getFirstDayOfWorkingPeriod(LocalDate date) {
         return date.minusDays(4);
     }
 
     @Override
-    protected boolean isPayDay(LocalDate date) {
+    public boolean isPayDay(LocalDate date) {
         return date.getDayOfWeek() == DayOfWeek.FRIDAY;
     }
 

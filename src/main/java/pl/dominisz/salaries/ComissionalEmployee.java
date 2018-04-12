@@ -8,21 +8,24 @@ import java.time.LocalDate;
  * 11.04.2018
  */
 public class ComissionalEmployee extends Employee {
+    public ComissionalEmployee(String name) {
+        super(name);
+    }
     //commision
     //salary
 
     @Override
-    protected BigDecimal computeSalary(LocalDate date) {
+    public BigDecimal computeSalary(LocalDate date) {
         return BigDecimal.ZERO;
     }
 
     @Override
-    protected LocalDate getFirstDayOfWorkingPeriod(LocalDate date) {
+    public LocalDate getFirstDayOfWorkingPeriod(LocalDate date) {
         return null;
     }
 
     @Override
-    protected boolean isPayDay(LocalDate date) {
+    public boolean isPayDay(LocalDate date) {
         return false;
     }
 
