@@ -8,11 +8,15 @@ import java.time.LocalDate;
  * 11.04.2018
  */
 public class ComissionalEmployee extends Employee {
-    public ComissionalEmployee(String name) {
+
+    private BigDecimal salary;
+    private BigDecimal commision;
+
+    public ComissionalEmployee(String name, BigDecimal salary, BigDecimal commision) {
         super(name);
+        this.salary = salary;
+        this.commision = commision;
     }
-    //commision
-    //salary
 
     @Override
     public BigDecimal computeSalary(LocalDate date) {
