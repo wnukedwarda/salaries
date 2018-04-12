@@ -3,6 +3,7 @@ package pl.dominisz.salaries;
 import java.math.BigDecimal;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,8 +19,10 @@ public class HourlyEmployee extends Employee {
     private BigDecimal hourlyRate;
     private List<WorkingDay> workingDays;
 
-    public void setWorkingDays(List<WorkingDay> workingDays) {
-        this.workingDays = workingDays;
+    public HourlyEmployee(String name, BigDecimal hourlyRate) {
+        super(name);
+        this.hourlyRate = hourlyRate;
+        this.workingDays = new ArrayList<>();
     }
 
     public void addWorkingDay(WorkingDay workingDay) {

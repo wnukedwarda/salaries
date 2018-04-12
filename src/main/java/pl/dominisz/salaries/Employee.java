@@ -17,6 +17,10 @@ public abstract class Employee {
 
     protected abstract boolean isPayDay(LocalDate date);
 
+    public Employee(String name) {
+        this.name = name;
+    }
+
     public BigDecimal getSalary(LocalDate date) {
         if (isPayDay(date)) {
             return computeSalary(date);
