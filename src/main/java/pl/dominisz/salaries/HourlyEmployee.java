@@ -11,23 +11,18 @@ public class HourlyEmployee extends Employee {
 
     private BigDecimal hourlyRate;
 
-
     @Override
-    public BigDecimal getSalary(LocalDate date) {
-        if (isPayDay(date)) {
-            return BigDecimal.ZERO;
-        } else {
-            return BigDecimal.ZERO;
-        }
+    protected BigDecimal computeSalary(LocalDate date) {
+        return BigDecimal.ZERO;
     }
 
     @Override
-    public LocalDate getFirstDayOfWorkingPeriod(LocalDate date) {
+    protected LocalDate getFirstDayOfWorkingPeriod(LocalDate date) {
         return null;
     }
 
     @Override
-    public boolean isPayDay(LocalDate date) {
+    protected boolean isPayDay(LocalDate date) {
         return false;
     }
 
