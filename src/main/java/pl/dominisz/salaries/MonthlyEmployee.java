@@ -1,6 +1,7 @@
 package pl.dominisz.salaries;
 
 import java.math.BigDecimal;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 /**
@@ -28,6 +29,15 @@ public class MonthlyEmployee extends Employee {
 
     @Override
     public boolean isPayDay(LocalDate date) {
-        return false;
+        LocalDate lastDay = LocalDate.of(date.getYear(), date.getMonth(), date.lengthOfMonth());
+        while (!isWorkingDay(lastDay)) {
+            lastDay = lastDay.minusDays(1);
+        }
+        return date.equals(lastDay);
+    }
+
+    private boolean isWorkingDay(LocalDate date) {
+        return date.getDayOfWeek() != DayOfWeek.SATURDAY
+                && date.getDayOfWeek() != DayOfWeek.SUNDAY;
     }
 }

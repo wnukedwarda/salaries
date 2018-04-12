@@ -26,6 +26,6 @@ public class MonthlyEmployeeTest {
     void shouldReturnTrueForWorkingDay() {
         MonthlyEmployee monthlyEmployee = new MonthlyEmployee("name", BigDecimal.ONE);
         assertTrue(monthlyEmployee.isPayDay(LocalDate.of(2018, 6, 29)));
-        assertFalse(monthlyEmployee.isPayDay(LocalDate.of(2018, 4, 30)));
+        assertTrue(monthlyEmployee.isPayDay(LocalDate.of(2018, 4, 30)));
     }
 }
