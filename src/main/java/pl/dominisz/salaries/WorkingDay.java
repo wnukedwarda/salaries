@@ -1,5 +1,6 @@
 package pl.dominisz.salaries;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.time.LocalDate;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
  * 11.04.2018
  */
 @Getter
+@AllArgsConstructor
 public class WorkingDay {
 
     private LocalDate date;
