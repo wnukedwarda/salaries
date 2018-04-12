@@ -8,10 +8,13 @@ import java.time.LocalDate;
  * 11.04.2018
  */
 public class MonthlyEmployee extends Employee {
-    public MonthlyEmployee(String name) {
+
+    private BigDecimal salary;
+
+    public MonthlyEmployee(String name, BigDecimal salary) {
         super(name);
+        this.salary = salary;
     }
-    //salary
 
     @Override
     public BigDecimal computeSalary(LocalDate date) {
