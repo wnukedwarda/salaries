@@ -1,11 +1,14 @@
 package pl.dominisz.salaries;
 
+import lombok.Getter;
+
 import java.time.LocalDate;
 
 /**
  * http://dominisz.pl
  * 11.04.2018
  */
+@Getter
 public class WorkingDay {
 
     private LocalDate date;

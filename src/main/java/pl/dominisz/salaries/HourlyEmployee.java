@@ -46,7 +46,14 @@ public class HourlyEmployee extends Employee {
     }
 
     private BigDecimal computeSalary(WorkingDay workingDay) {
-        return BigDecimal.ZERO;
+        if (workingDay.getHours() <= STANDARD_HOURS) {
+            return hourlyRate.multiply(new BigDecimal(workingDay.getHours()));
+        } else {
+            BigDecimal standardSalary = hourlyRate.multiply(new BigDecimal(STANDARD_HOURS));
+            BigDecimal overhours = new BigDecimal(workingDay.getHours() - STANDARD_HOURS);
+            BigDecimal overhourSalary = overhours.multiply(hourlyRate).multiply(OVERHOUR_RATE);
+            return standardSalary.add(overhourSalary);
+        }
     }
 
     @Override
